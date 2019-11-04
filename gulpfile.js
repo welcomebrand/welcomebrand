@@ -12,12 +12,14 @@ var rename = require('gulp-rename');
 var watchify = require('watchify');
 var sourcemaps = require('gulp-sourcemaps');
 var gutil = require('gulp-util');
+var critical = require('critical');
 var runSequence = require('run-sequence').use(gulp);
 var postcss = require('gulp-postcss');
 var svgstore = require('gulp-svgstore');
 var svgmin = require('gulp-svgmin');
 var imagemin = require('gulp-imagemin');
 var compress = require('compression');
+var fileinclude = require('gulp-file-include');
 var cache = require('gulp-cached');
 
 /**
@@ -91,6 +93,35 @@ gulp.task('svgstore', function () {
         .pipe(gulp.dest('Build/assets/img'));
 });
 
+
+// Compiles static templates
+gulp.task('fileinclude', function() {
+    gulp.src('src/templates/*.html')
+        .pipe(fileinclude({
+            prefix: '@@',
+            basepath: '@file',
+            filters: {
+                test: function( includedFileContent, options ){
+                    console.log(includedFileContent, arguments);
+                    // Where `options` is the { foo: "bar" } object
+                    var template = handlebars.compile(content);
+                    return template(options);
+                }
+            }
+        }))
+        .on('error', gutil.log)
+        .pipe(cache('html'))
+        .pipe(gulp.dest('Build/production/'));
+        //.pipe(browserSync.stream());
+});
+
+// Copies thirdparty JS to build dir
+/*gulp.task('copy', function () {
+    gulp.src([
+            'node_modules/chart.js/dist/Chart.min.js'
+        ])
+        .pipe(gulp.dest('Build/production/js/'));
+});*/
 
 // Concatenate & Minify JS - https://travismaynard.com/writing/getting-started-with-gulp
 gulp.task('scripts', function() {
