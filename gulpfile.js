@@ -48,17 +48,17 @@ gulp.task('sass', function () {
         require('postcss-object-fit-images')
     ];
 
-    return gulp.src('Build/assets/scss/**/*.scss')
+    return gulp.src('assets/scss/**/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
         .pipe(postcss(plugins))
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('Build/assets/css/'));
+        .pipe(gulp.dest('assets/css/'));
 });
 
 // Minifies and optimise images
 gulp.task('imagemin', function () {
-    return gulp.src('Build/assets/img-raw/*')
+    return gulp.src('assets/img-raw/*')
         .pipe(imagemin([
             imagemin.gifsicle(), 
             imagemin.jpegtran(), 
@@ -71,13 +71,13 @@ gulp.task('imagemin', function () {
             })
         ]))
         .on('error', gutil.log)
-        .pipe(gulp.dest('Build/assets/img'));
+        .pipe(gulp.dest('assets/img'));
 });
 
 // SVG symbol generation
 gulp.task('svgstore', function () {
     return gulp
-        .src('Build/assets/img-raw/*.svg')
+        .src('assets/img-raw/*.svg')
         .pipe(svgmin(function (file) {
             return {
                 plugins: [{
@@ -90,7 +90,7 @@ gulp.task('svgstore', function () {
         .pipe(svgstore())
         .on('error', gutil.log)  
         .pipe(rename('icon-sprite.svg'))
-        .pipe(gulp.dest('Build/assets/img'));
+        .pipe(gulp.dest('assets/img'));
 });
 
 
@@ -111,7 +111,7 @@ gulp.task('fileinclude', function() {
         }))
         .on('error', gutil.log)
         .pipe(cache('html'))
-        .pipe(gulp.dest('Build/production/'));
+        .pipe(gulp.dest('/production/'));
         //.pipe(browserSync.stream());
 });
 
@@ -120,24 +120,24 @@ gulp.task('fileinclude', function() {
     gulp.src([
             'node_modules/chart.js/dist/Chart.min.js'
         ])
-        .pipe(gulp.dest('Build/production/js/'));
+        .pipe(gulp.dest('/production/js/'));
 });*/
 
 // Concatenate & Minify JS - https://travismaynard.com/writing/getting-started-with-gulp
 gulp.task('scripts', function() {
-    return gulp.src(['Build/assets/js/app/*.js', 'Build/assets/js/libs/*.js'])
+    return gulp.src(['assets/js/app/*.js', 'assets/js/libs/*.js'])
         .pipe(concat('production.js'))
-        .pipe(gulp.dest('Build/assets/js/build'))
+        .pipe(gulp.dest('assets/js/build'))
         .pipe(rename('production.min.js'))
         .pipe(uglify())
-        .pipe(gulp.dest('Build/assets/js/build'));
+        .pipe(gulp.dest('assets/js/build'));
 });
  
 // Watch Files For Changes - https://travismaynard.com/writing/getting-started-with-gulp
 gulp.task('watch', function() {
-    gulp.watch('Build/assets/js/libs/*.js', gulp.series('scripts'));
-    gulp.watch('Build/assets/js/app/*.js', gulp.series('scripts'));
-    gulp.watch('Build/assets/scss/**/*.scss', gulp.series('sass'));
+    gulp.watch('assets/js/libs/*.js', gulp.series('scripts'));
+    gulp.watch('assets/js/app/*.js', gulp.series('scripts'));
+    gulp.watch('assets/scss/**/*.scss', gulp.series('sass'));
 });
 
 
@@ -145,7 +145,7 @@ gulp.task('watch', function() {
 gulp.task('critical-css', function(cb) {
     
     critical.generate({
-        base: 'Build/',
+        base: '/',
         src: 'http://genesis.local/',
         dest: 'assets/css/critical.css',
         width: 320,
@@ -162,7 +162,7 @@ gulp.task('critical-css', function(cb) {
 // Default task
 gulp.task('default', function( callback ){
     runSequence(
-        ['sass', 'svgstore', 'imagemin', 'scripts', 'fileinclude', 'watch'], 
+        ['sass', 'svgstore', 'imagemin', 'scripts',  'watch'], 
         callback
     );
 });

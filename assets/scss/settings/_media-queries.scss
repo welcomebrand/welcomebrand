@@ -15,7 +15,7 @@ $bp-small: 30em;
 $bp-medium: 40em;
 $bp-large: 48em;
 $bp-xlarge: 64em;
-$bp-xxlarge: 77.5em;
+$bp-xxlarge: 77.5em; 
 
 // Use: @include bp-s {};
 @mixin bp-xs { @media only screen and (min-width: $bp-x-small) { @content; } }
