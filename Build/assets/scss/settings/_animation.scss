@@ -1,0 +1,48 @@
+/*
+
+ANIMATION
+=========
+
+Any basic, custom animation styles can go here. 
+
+For scroll triggered animations, it's worth checking out http://mynameismatthieu.com/WOW/
+
+*/
+
+/* Hover animation */
+// Use: @include hover-fade;
+@mixin hover-fade {
+	transition: all 0.3s ease 0s;
+	}
+
+// SWUP fades
+.transition-fade {
+	transition: 1.5s;
+	opacity: 1;
+	//background: blue;
+	}
+
+html.is-animating .transition-fade {
+    opacity: 0;
+    //background: red;
+	}
+
+.animation-class {
+  /* default animation rules */
+}
+
+html.is-animating .animation-class {
+  /* CSS styles when animating  */
+}
+
+html.is-changing .animation-class {
+  /* CSS styles when changing  */
+}
+
+html.is-leaving .animation-class {
+  /* CSS styles when leaving  */
+}
+
+html.is-rendering .animation-class {
+  /* CSS styles when rendering  */
+}

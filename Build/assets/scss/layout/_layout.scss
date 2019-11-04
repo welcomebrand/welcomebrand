@@ -1,0 +1,24 @@
+/*
+
+LAYOUT
+======
+
+Top level layout - should only contain a couple of bits and pieces for <HTML>, <body> and perhaps some main wrappers. 
+
+Grid structure for this project uses flexbox and the grid layout is applied in the scss for each element rather than using grid classes in the HTML. 
+
+*/
+
+html {
+	overflow-x: hidden;
+	min-height: 100vh;
+	}
+
+body {
+	padding: 0;
+	margin: 0;
+	@include bg($white,1); 
+	@include color($grey-base,1);
+	}
+
+// Content layout 

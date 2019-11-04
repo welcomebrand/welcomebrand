@@ -1,0 +1,104 @@
+
+/*
+
+If we use Google fonts, host them locally for improved performance. Instruction and a wizard to generate the relevant settings can be found here: https://google-webfonts-helper.herokuapp.com/fonts
+
+*/
+
+@import url(//fonts.googleapis.com/css?family=Josefin+Sans&display=swap);
+
+
+/* Font weights */
+$normal: 400;
+$bold: 700;
+
+$font-primary: "Josefin Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+/* REM Font sizing - http://blog.divshot.com/post/29552945105/useful-sass-mixins-for-responsive-design-font-sizing */
+// Use: @include font-size(1,1.5);
+@mixin font-size($size: 1, $line: $size * 1.5) {
+	font-size     : ($size * 16) + px;
+	line-height   : ($line * 16) + px;
+	font-size     : $size + rem;
+	line-height   : $line + rem;
+	}
+
+html {
+	font-size: 100%;
+	font-family: $font-primary;
+	}
+
+body {
+	@include color($grey-base,1);
+	@include font-size(.875,1.25);
+	@include bp-l {
+		@include font-size(1,1.5);
+		}
+	}	
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0 0 1.5rem;	
+	@include font-size(1.5,1.75);
+	font-weight: $bold;
+	}
+
+	h1 {
+		@include font-size(1.75,2);
+		@include bp-l {
+			@include font-size(2.5,2.5);
+			}
+		}
+
+	h2 {
+		@include font-size(1.375,1.6375);
+		@include bp-l {
+			@include font-size(1.875,1.9375);
+			}
+		}
+
+	h3,
+	h4, 
+	h5, 
+	h6 {
+		@include font-size(1.25,1.5);
+		@include bp-l {
+			@include font-size(1.5,1.75);
+			}
+		}
+
+
+p {
+	margin: 0 0 1.5rem;
+	}
+
+a {
+	@include hover-fade;
+	font-weight: $bold;
+	@include color($grey-base,1);
+	&:hover,
+	&:active,
+	&:focus {
+		@include color($grey-base,1);
+		}
+	}
+
+strong,
+b {
+	font-weight: $bold;
+	}
+
+.medium {
+	@include font-size(1,1.375);
+	}
+
+.small {
+	@include font-size(.75,1.25);
+	}
+
+cite {
+
+	}
+
+pre, code {
+
+	}

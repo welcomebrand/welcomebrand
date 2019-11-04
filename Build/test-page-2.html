@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+
+	<!--
+
+    👋👋
+
+    This website was designed and developed by the team at Offroadcode Limited.
+
+    https://offroadcode.com
+
+    -->
+
+    <!-- Critical CSS -->
+    <style>
+    <!-- 
+    	Remember in razor pages the the @ symbol in CSS needs to be @@ 
+    -->
+    *,:after,:before{box-sizing:border-box;text-rendering:optimizeLegibility}body,div,html,section{margin:0;padding:0;border:0;outline:0;vertical-align:baseline;background:0 0}section{display:block}html{font-size:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"}body{color:#4e514e;font-size:.875rem;line-height:20px;font-size:.875rem;line-height:1.25rem}@media only screen and (min-width: 48em){body{font-size:16px;line-height:24px;font-size:1rem;line-height:1.5rem}html{overflow-x:hidden;min-height:100vh}body{padding:0;margin:100px auto;background-color:#fff;color:#4e514e;max-width:64em;margin-left:auto;margin-right:auto}a{font-weight:700;color:#4E514E}p{margin-bottom:1.5rem}
+    </style>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="ClearType" content="true" />
+
+	<!-- 
+	Delete as required: Prefetch DNS for external assets (CDN-hosted libraries + plugins, font-embedding, social widgets, etc). 
+	
+	<link rel="dns-prefetch" href="//google-analytics.com">
+	<link rel="dns-prefetch" href="//ajax.googleapis.com">
+	-->
+
+	<title>GENESIS - An Offroadcode starter kit</title>
+	<meta name="description" content=" " />
+
+	<!-- Facebook Open Graph data -->
+	<meta property="og:title" content="Title Here" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="http://www.example.com/" />
+	<meta property="og:image" content="http://example.com/image.jpg" />
+	<meta property="og:description" content="Description Here" />
+
+	<!-- Twitter Card data -->
+	<meta name="twitter:card" value="summary">
+
+	<!-- Icons - Generate yours here: realfavicongenerator.net -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffffff">
+	<meta name="msapplication-TileColor" content="#2d89ef">
+	<meta name="theme-color" content="#ffffff">
+
+</head>
+
+<body class=" transition-fade" id="swup">
+	
+	<nav>
+		<a href="/index.html">Home</a>
+		<a href="/test-page-1.html">Page 1</a>
+		<a href="/test-page-2.html">Page 2</a>
+	</nav>
+
+	<div>
+		<img src="/assets/img/icon-seed.svg" width="100" alt="Genesis logo" />
+		<h1>Test Page 2</h1>
+
+		<p>An unopinionated base build kit from Offroadcode to help get started on our projects. <a href="https://github.com/Offroadcode/Genesis">Download from Github</a>.</p>
+		<p>If you need basic HTML components for use in your project, you can find them in our component library - <a href="https://offroadcode.github.io/Jigsaw/">Jigsaw</a> (<a href="https://github.com/Offroadcode/Jigsaw">Github</a>).</p>
+	</div>
+
+	
+
+
+
+
+	<!-- Load remaining non-critical CSS -->
+    <script>
+        var cb = function() {
+        var l = document.createElement('link'); l.rel = 'stylesheet';
+        l.href = '/assets/css/screen.css';
+        var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
+        };
+        var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+        webkitRequestAnimationFrame || msRequestAnimationFrame;
+        if (raf) raf(cb);
+        else window.addEventListener('load', cb);
+    </script>
+    <noscript>
+		<link href="/assets/css/screen.css" rel="stylesheet">
+	</noscript>
+
+	<!-- Scripts-->
+	<script rel="preload" as="script" src="/assets/js/build/production.min.js"></script>
+
+	<script>
+	let options = {
+        LINK_SELECTOR: 'a[href^="/"]:not([data-no-swup]), a[href^="#"]:not([data-no-swup]), a[xlink\\:href]',
+        elements: [
+            '#swup'
+        ],
+        animationSelector: '[class^="a-"]',
+        cache: true,
+        pageClassPrefix: '',
+        scroll: true,
+        preload: true,
+        disableIE: false
+    }
+	</script>
+	<!-- Scripts -->
+
+</body>
+</html>
