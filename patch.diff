@@ -1,0 +1,31 @@
+From 104183c131147453677d0b400aa98fa581ef73c4 Mon Sep 17 00:00:00 2001
+From: James Young <james@offroadcode.com>
+Date: Mon, 4 Nov 2019 19:29:29 +0000
+Subject: [PATCH] Initial commit
+
+---
+ .gitignore | 2 ++
+ README.md  | 2 ++
+ 2 files changed, 4 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 README.md
+
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+index 0000000..486b32c
+--- /dev/null
++++ b/.gitignore
+@@ -0,0 +1,2 @@
++.sass-cache/
++*.css.map
+diff --git a/README.md b/README.md
+new file mode 100644
+index 0000000..c2fc005
+--- /dev/null
++++ b/README.md
+@@ -0,0 +1,2 @@
++# welcomebrand
++Holding site for welcomebrand.co.uk
+-- 
+2.20.1.windows.1
+
