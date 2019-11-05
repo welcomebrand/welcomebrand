@@ -40,12 +40,13 @@ h1, h2, h3, h4, h5, h6 {
 	margin: 0 0 1.5rem;	
 	@include font-size(1.5,1.75);
 	font-weight: $bold;
+	color: $blue-dark;
 	}
 
 	h1 {
 		@include font-size(1.75,2);
 		@include bp-l {
-			@include font-size(2.5,2.5);
+			@include font-size(3.5,3.5);
 			}
 		}
 
@@ -74,17 +75,25 @@ p {
 a {
 	@include hover-fade;
 	font-weight: $bold;
-	@include color($grey-base,1);
+	@include color($blue-dark,1);
 	&:hover,
 	&:active,
 	&:focus {
-		@include color($grey-base,1);
+		@include color($blue-dark,1);
+		text-decoration: none;
 		}
 	}
 
 strong,
 b {
 	font-weight: $bold;
+	}
+
+.large {
+	@include font-size(1.125,1.5);
+	@include bp-l {
+		@include font-size(1.875,2.25);
+		}
 	}
 
 .medium {
@@ -95,10 +104,12 @@ b {
 	@include font-size(.75,1.25);
 	}
 
-cite {
+.content-item-title {
 
 	}
 
-pre, code {
-
-	}
+.content-item-sub-title {
+	@include color($blue-base,1);
+	font-weight: $bold;
+	margin-bottom: 0;
+	}	
