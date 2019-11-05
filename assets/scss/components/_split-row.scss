@@ -48,8 +48,8 @@
 	.contact-link {
 		position: relative;
 		@include color($white,1);
-		display: block;
-		margin-bottom: .5rem;
+		display: inline-block;
+		//margin-bottom: .5rem;
 		
 		&:hover,
 		&:focus,
@@ -73,9 +73,9 @@
 				}
 			}
 
-		@include bp-xl {
+		/* @include bp-xl {
 			display: inline-block;
-			}
+			} */
 		}
 
 
