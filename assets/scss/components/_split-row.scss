@@ -2,7 +2,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	align-content: center;
-	height: 100vh;
+	min-height: 100vh;
 }
 
 .content-item {
@@ -38,7 +38,6 @@
 		padding: 0 $space*2;
 		}
 	}
-
 
 // Contact Links
 .contact-links {
