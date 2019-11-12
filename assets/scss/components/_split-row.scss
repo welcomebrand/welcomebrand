@@ -1,18 +1,27 @@
 .split-content {
 	display: flex;
 	flex-wrap: wrap;
-	align-content: center;
-	min-height: 100vh;
-}
+	align-content: flex-start;
+	
+	@include bp-l {
+		align-content: center;
+		height: 100vh;
+		}
+	}
 
 .content-item {
 	flex: 1 0 100%;
 	display: flex;
 	justify-content: center;
+	@include bg($off-white,1); 
 
 	&--first {
+
 		height: 30%;
 		align-items: flex-end;
+		@include bp-l {
+			text-align: right; 
+			}
 		}
 
 	&--second {

@@ -17,7 +17,7 @@ html {
 body {
 	padding: 0;
 	margin: 0;
-	@include bg($off-white,1); 
+	@include bg($blue-dark,1); 
 	@include color($grey-base,1);
 	}
 
